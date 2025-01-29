@@ -26,6 +26,12 @@ const resolvers = {
         reviews(parent) {
             return db.reviews.filter((r) => r.author_id === parent.id)
         }
+    },
+    Mutation : {
+        deleteAuthor(_, args) {
+            db.authors =  db.authors.filter((R) => R.id !== args.id)
+            return db.authors
+        }
     }
 }
 

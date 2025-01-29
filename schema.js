@@ -32,4 +32,7 @@ type Query {
     author(id : ID!) : Author
 }
 
+type Mutation {
+    deleteAuthor(id : ID!) : [Author]
+}
 `
