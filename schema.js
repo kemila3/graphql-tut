@@ -23,6 +23,9 @@ type Query {
     games : [Game]
     reviews : [Review]
     authors : [Author]
+    game(id : ID!) : Game
+    review(id : ID!) : Review
+    author(id : ID!) : Author
 }
 
 `
