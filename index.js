@@ -31,9 +31,26 @@ const resolvers = {
         deleteAuthor(_, args) {
             db.authors =  db.authors.filter((R) => R.id !== args.id)
             return db.authors
-        }
+        },
+
+        createAuthor: (_, args) => {
+            // const author = { ...newAuthor };
+            // db.authors.push(author); // Add new author to the array
+            // console.log("Updated Authors List:", db.authors); // Print entire array
+            // return db.authors; // Return all authors
+
+            let author = {
+                ...args.author, 
+                // id: Math.floor(Math.random() * 10000).toString()
+              }
+              db.authors.push(author)
+        
+              return author
+        
+          },
     }
 }
+
 
 const server = new ApolloServer({
     typeDefs,

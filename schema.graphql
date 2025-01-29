@@ -1,6 +1,3 @@
-// schema is a collection of type definitions
-
-export const typeDefs = `#graphql
 type Game {
     id : ID!
     title : String!
@@ -17,7 +14,7 @@ type Review {
 }
 
 type Author {
-    id :ID!
+    id : ID!
     name : String!
     verified : Boolean!
     reviews : [Review!]
@@ -33,17 +30,12 @@ type Query {
 }
 
 type Mutation {
-
     deleteAuthor(id : ID!) : [Author]
-
     createAuthor(newAuthor: authorInput!) : Author
-
 }
 
-    input authorInput {
-        id : ID!,
-        name: String!,
-        verified : Boolean!,
-    }
-
-`;
+input authorInput {
+    id : ID!
+    name: String!
+    verified : Boolean!
+}
